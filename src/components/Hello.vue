@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ message }}</h1>
+    <h2>{{ x }} + {{ y }} = {{ z }}</h2>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -25,7 +26,14 @@ export default {
   name: 'hello',
   data () {
     return {
-      message: 'Welcome to Your Vue.js App'
+      message: 'Welcome to Your Vue.js App',
+      x: 1,
+      y: 2
+    }
+  },
+  computed: {
+    z () {
+      return this.x + this.y
     }
   }
 }
